@@ -5,8 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MAILLE | Ürün Kataloğu</title>
   <link rel="stylesheet" href="styles.css">
-  <script defer src="catalog-data.js"></script>
-  <script defer src="shared-catalog.js"></script>
+  <script defer src="catalog.js"></script>
+  <script defer src="categories.js"></script>
+  <script defer src="products.js"></script>
+  <script defer src="photos.js"></script>
   <script defer src="app.js"></script>
 </head>
 <body>
@@ -22,10 +24,12 @@
     <section class="catalog-heading">
       <div><p class="eyebrow">ÜRÜN ARŞİVİ</p><h1>Koleksiyon</h1><p class="muted" id="product-count"></p></div>
       <div class="heading-actions">
+        <button class="button" id="connect-catalog" type="button">JSON dosyasını bağla</button>
         <button class="button" id="manage-categories">Kategorileri yönet</button>
         <button class="button" id="add-category">+ Kategori ekle</button>
       </div>
     </section>
+    <p id="catalog-file-status" class="form-message" role="status">Kataloğu açmak ve kaydetmek için aynı klasördeki katalog.json dosyasını bağlayın.</p>
 
     <section class="category-section" aria-labelledby="category-heading">
       <div class="section-label"><h2 id="category-heading">Hızlı seçim</h2><span>KATEGORİLER</span></div>
@@ -40,7 +44,7 @@
       <div class="product-list" id="product-list"></div>
       <div class="empty-state" id="empty-state" hidden>Bu seçimde ürün bulunamadı.</div>
     </section>
-    <footer><span>MAILLE · Ürün arşivi</span><div><button class="text-button" id="export-csv">CSV indir</button><button class="text-button" id="export-json">JSON yedekle</button><button class="text-button" id="reset-data">Orijinale dön</button></div></footer>
+    <footer><span>MAILLE · Ürün arşivi</span><div><button class="text-button" id="export-csv">CSV indir</button></div></footer>
   </main>
 
   <template id="product-template">
