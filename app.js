@@ -112,7 +112,7 @@ function addMissingCatalogProducts(existingProducts, existingCategories) {
 }
 
 function loadCatalog() {
-  const saved = readStorage(STORAGE_KEY);
+  const saved = readStorage(STORAGE_KEY) || globalThis.SHARED_CATALOG;
   const imageCache = readStorage(LEGACY_IMAGE_CACHE_KEY) || {};
   if (saved && Array.isArray(saved.products) && Array.isArray(saved.categories)) {
     const catalog = {
